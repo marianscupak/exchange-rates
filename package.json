@@ -1,0 +1,55 @@
+{
+    "name": "playground-exchange-rate",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "author": "IoT.water",
+    "scripts": {
+        "dev:local": "vite",
+        "dev:vercel": "vercel dev",
+        "build": "tsc && vite build",
+        "test": "vitest",
+        "lint:check": "eslint --cache --quiet \"src/**/*.{ts,tsx}\"",
+        "lint:fix": "eslint --cache --fix \"src/**/*.{ts,tsx}\"",
+        "format:check": "prettier --cache --check --log-level warn .",
+        "format:fix": "prettier --cache --write --log-level warn ."
+    },
+    "dependencies": {
+        "@radix-ui/react-select": "^2.1.1",
+        "@tanstack/react-query": "^5.56.2",
+        "@vercel/node": "^3.2.14",
+        "node-fetch": "^3.3.2",
+        "normalize.css": "^8.0.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "styled-components": "^6.1.13",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@tanstack/eslint-plugin-query": "^5.56.1",
+        "@tanstack/react-query-devtools": "^5.56.2",
+        "@types/react": "^18.3.6",
+        "@types/react-dom": "^18.3.0",
+        "@typescript-eslint/eslint-plugin": "^8.5.0",
+        "@typescript-eslint/parser": "^8.5.0",
+        "@vitejs/plugin-react-swc": "^3.7.0",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-import-resolver-typescript": "^3.6.3",
+        "eslint-plugin-import": "^2.30.0",
+        "eslint-plugin-jsx-a11y": "^6.10.0",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-react": "^7.36.1",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-react-refresh": "^0.4.12",
+        "lint-staged": "^15.2.10",
+        "prettier": "^3.3.3",
+        "typescript": "^5.6.2",
+        "vite": "^5.4.5",
+        "vite-tsconfig-paths": "^5.0.1",
+        "vitest": "^2.1.1"
+    },
+    "volta": {
+        "node": "18.19.0"
+    }
+}
