@@ -2,7 +2,7 @@
 
 ## Running locally
 Install dependencies using `pnpm`.
-Run server `dev:vercel` and client `dev:client`
+Run server `dev:server` and client `dev:client`. You need to create `.env` by copying `.env.example` and modify default values if needed.
 
 ## Running tests
 `pnpm test`
