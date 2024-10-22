@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { parseResponse } from "store/api/helpers";
 import { ExchangeRate } from "store/api/types";
 
-// todo - only fetch data once a day
 export const useExchangeRates = () => {
     const queryInfo = useQuery<string>({
         queryKey: ["exchangeRates"],
