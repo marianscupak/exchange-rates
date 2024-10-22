@@ -2,6 +2,7 @@
 yarn*
 .yarn/*
 .husky/*
+pnpm-lock.yaml
 .editorconfig
 .gitattributes
 dist

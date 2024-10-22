@@ -1,13 +1,16 @@
 # Exchange rates sample project
 
 ## Running locally
+
 Install dependencies using `pnpm`.
 Run server `dev:server` and client `dev:client`. You need to create `.env` by copying `.env.example` and modify default values if needed.
 
 ## Running tests
+
 `pnpm test`
 
 ## 3rd party API documentation
+
 API URL: https://www.cnb.cz/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt
 Documentation: https://www.cnb.cz/en/faq/Format-of-the-foreign-exchange-market-rates/
 
@@ -41,15 +44,17 @@ Documentation: https://www.cnb.cz/en/faq/Format-of-the-foreign-exchange-market-r
 Complete all the tasks below in any order you please.
 
 #### 1. Cache Exchange Rates
-Exchange rates are fetched from the API on every page load. Modify code so that exchange rates are fetched only once per calendar day. 
+
+Exchange rates are fetched from the API on every page load. Modify code so that exchange rates are fetched only once per calendar day.
 
 #### 2. Calculate Exchange Rates for all currencies
+
 Modify list of currencies so whenever amount of CZK is inserted, the amount of all other currencies is calculated and displayed. See image to see the desired outcome. Assume styled components are shared in another applications.
 
 ![Task 2](./task-2.png)
 
-
 #### 3. Show history of exchange rates
+
 When a foreign exchange rate is selected, show a line chart showing rates for last 30 days of the selected currency. See image to see the desired outcome.
 
 ![Task 3](./task-3.png)
