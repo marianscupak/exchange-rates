@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useAtom } from "jotai";
 
 import { AmountInput } from "components/ExchangeRate/AmountInput";
 import { CurrencySelector } from "components/ExchangeRate/CurrencySelector";
@@ -8,14 +8,15 @@ import { Wrapper } from "components/ExchangeRate/Wrapper";
 import { Loading } from "components/ui";
 import { Typography } from "components/ui/Typography";
 import { ExchangeIcon } from "components/ui/icons";
+import { amountAtom } from "state/amount";
+import { exchangeRateAtom } from "state/exchange-rate";
 import { useExchangeRates } from "store/api/hooks";
-import { ExchangeRate } from "store/api/types";
 import { convertCurrency } from "utils/exchange.helpers";
 
 const _ExchangeRate = () => {
     const { data, isPending } = useExchangeRates();
-    const [currency, setCurrency] = useState<ExchangeRate | null>(null); // [1
-    const [amount, setAmount] = useState<number | null>(null);
+    const [currency, setCurrency] = useAtom(exchangeRateAtom); // [1
+    const [amount, setAmount] = useAtom(amountAtom);
 
     if (isPending) {
         return <Loading />;

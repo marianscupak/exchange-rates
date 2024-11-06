@@ -14,3 +14,9 @@ export const ListItem = styled.div`
         border-bottom: none;
     }
 `;
+
+export const Rates = styled.div`
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+`;

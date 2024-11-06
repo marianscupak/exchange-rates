@@ -1,4 +1,7 @@
+import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+
+import { DayOfExchangeRates } from "store/api/types";
 
 /**
  * Default query fetching data from API.
@@ -17,6 +20,18 @@ const defaultQueryFn: QueryFunction = async () => {
     return response.text();
 };
 
+export const fetchLastMonthExchangeRates: QueryFunction<DayOfExchangeRates[]> = async () => {
+    const url = `${import.meta.env.VITE_APP_API_URL}/last-month`;
+    if (!url) {
+        throw new Error("`VITE_APP_API_URL` env variable not set. Check .env file or README.md for more information");
+    }
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Network response failed: ${response.status} ${response.statusText}`);
+    }
+    return response.json();
+};
+
 export const getQueryClient = () =>
     new QueryClient({
         defaultOptions: {
@@ -25,3 +40,5 @@ export const getQueryClient = () =>
             },
         },
     });
+
+export const getPersister = () => createSyncStoragePersister({ storage: window.localStorage });

@@ -1,14 +1,17 @@
-import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { PropsWithChildren } from "react";
 
-import { getQueryClient } from "store/api/query";
+import { getPersister, getQueryClient } from "store/api/query";
+
+const queryClient = getQueryClient();
+const persister = getPersister();
 
 export const StoreProvider = ({ children }: PropsWithChildren) => {
     return (
-        <QueryClientProvider client={getQueryClient()}>
+        <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
             {children}
             <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+        </PersistQueryClientProvider>
     );
 };
